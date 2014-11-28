@@ -96,14 +96,18 @@ input {
 	padding-left: 16px;
 	padding-right: 16px;
 	padding-top: 8px;
-	font:14px/1 "Fakt", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font:14px/1.5 "Fakt", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	display: inline-block;
 	color: #616367;
 	position: relative;
 	z-index: 50;
 }
 ::-webkit-input-placeholder {
-   padding-top: 1px;
+   padding-top: 0px;
+}
+input::selection {
+    background: #28AFFA;
+    color: #fff;
 }
 button {
 	background: #28AFFA;
@@ -139,9 +143,12 @@ button.active:active {
 	top: 18px;
 	right: 16px;
 	cursor: pointer;
+	z-index: 60;
 }
 
-.submit-error {
+.submit-error,
+.success-message {
+	position: relative;
 	background: #393440;
 	color: #FF8080;
 	font-size: 10px; 
@@ -166,4 +173,20 @@ button.active:active {
 .submit-error.show {
 	margin-top: 0;
 }
+.success-message.show {
+	margin-top: 0;
+	z-index: 30;
+}
+.success-message {
+	background: #2C3B4D;
+	color: #7FD1FF;
+}
+
+
+
+
+
+
+
+
 
