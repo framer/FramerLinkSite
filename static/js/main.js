@@ -34,11 +34,37 @@ function retina() {
 $(document).ready(retina);
 
 
-function addhttp(url) {
+function checkLink(url) {
 	if (!/^(f|ht)tps?:\/\//i.test(url)) {
 		url = "http://" + url;
 	}
 	return url;
+};
+
+function isValid(url) {
+	var pattern = new RegExp('^(https?:\\/\\/)?'+ // Protocol
+	'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // Domain name
+	'((\\d{1,3}\\.){3}\\d{1,3}))'+ // IPv4 Address
+	'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // Port and Path
+	'(\\?[;&a-z\\d%_.~+=-]*)?'+ // Query string
+	'(\\#[-a-z\\d_]*)?$','i'); // Fragment Locator
+
+	if (!pattern.test(url)) {
+		$(".submit-error").html("Not a valid URL").addClass("show");
+		return false;
+	} else {
+		return true;
+	}
+};
+
+function isZip(url) {
+	var pattern = new RegExp('[^\\/]{3,}\.(zip)$'); // End with .zip
+	if (!pattern.test(url)) {
+		$(".submit-error").html("Not a .zip file").addClass("show");
+		return false;
+	} else {
+		return true;
+	}
 };
 
 $(document).ready(function() {
@@ -53,8 +79,10 @@ $(document).ready(function() {
 
 	$("button").click(function() {
 		var value = $("input").val();
-		if (value != "") {
-			value = addhttp(value);
+
+		if (isValid(value) && isZip(value)) {
+			$(".submit-error").removeClass("show");
+			value = checkLink(value);
 			var link = value.replace("http://", "http://framer.link/").replace("https://", "https://framer.link/");
 			$("input").val(link).select();
 			$(this).hide();
