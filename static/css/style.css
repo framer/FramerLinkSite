@@ -140,10 +140,19 @@ button.active:active {
 }
 .btn-close {
 	position: absolute;
-	top: 18px;
-	right: 16px;
+	top: 13px;
+	right: 10px;
 	cursor: pointer;
 	z-index: 60;
+	opacity: 0.5;
+	-webkit-transition: opacity 0.2s ease;
+	-moz-transition: opacity 0.2s ease;
+	-ms-transition: opacity 0.2s ease;
+	-o-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+}
+.btn-close:hover {
+	opacity: 1;
 }
 
 .submit-error,
@@ -168,13 +177,12 @@ button.active:active {
 	-ms-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
-	
 }
-.submit-error.show {
+.submit-error.show,
+.success-message.show {
 	margin-top: 0;
 }
 .success-message.show {
-	margin-top: 0;
 	z-index: 30;
 }
 .success-message {

@@ -86,7 +86,7 @@ $(document).ready(function() {
 
 		if (isValid(value) && isZip(value)) {
 			$(".submit-error").removeClass("show");
-			$(".success-message").html("CMD+C to Copy").addClass("show");
+			$(".success-message").html("CMD+C To Copy").addClass("show");
 
 			value = checkLink(value);
 			var link = value.replace("http://", "http://framer.link/").replace("https://", "https://framer.link/");
