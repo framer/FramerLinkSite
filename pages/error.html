@@ -1,0 +1,28 @@
+{% extends "error.html" %}
+{% block content %}
+
+<script type="text/javascript" charset="utf-8">
+	// $(document).ready(function() {
+		
+	// 	// Add the missing url to the text
+	// 	$("#url").text(window.location.pathname);
+		
+	// 	// Fix the css locations dynamically
+	// 	$("head link").each(function() {
+	// 		for (var i=0; i<window.location.pathname.split(/\//g).length-2; i++)
+	// 			$(this).attr("href", "../" + $(this).attr("href"));
+	// 	});
+		
+	// })
+</script>
+
+<section id="wrapper">
+	<section>
+		<img src="/static/images/error/icon-framer.png" srcset="/static/images/error/icon-framer@2x.png 2x">
+		<h1>Opening .framer file&hellip;</h1>
+		<p>Links require <a href="http://framerjs.com">Framer Studio</a> to be installed. <br>
+		Generate your own framer links <a href="http://framer.links">here.</a></p> 
+	</section>
+</section>
+
+{% endblock %}
