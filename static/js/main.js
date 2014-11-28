@@ -33,7 +33,6 @@ function retina() {
  
 $(document).ready(retina);
 
-
 function checkLink(url) {
 	if (!/^(f|ht)tps?:\/\//i.test(url)) {
 		url = "http://" + url;
@@ -69,11 +68,16 @@ function isZip(url) {
 
 $(document).ready(function() {
 
-	$("input").keyup(function() {
+	$("input").keyup(function(event) {
 		if ($(this).val() == "") {
 			$("button").removeClass("active");
 		} else {
 			$("button").addClass("active");
+		}
+
+		/* Bind enter to button click */
+		if(event.keyCode == 13) {
+			$("button").click();
 		}
     });
 
