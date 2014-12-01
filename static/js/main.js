@@ -88,17 +88,30 @@ $(document).ready(function() {
 		
 		var value = $("input").val();
 
+		if (value.indexOf("?") != -1) {
+			value = value.split("?")[0];
+		}
+
+		// See if this is a valid url at all
 		if (!isValidUrl(value)) {
 			$(".submit-error").html("Not a valid URL").addClass("show");
 			return;
 		}
 
 		if (isZip(value) || isGist(value)) {
+			
 			$(".submit-error").removeClass("show");
 			$(".success-message").html("CMD+C To Copy").addClass("show");
 
 			value = checkLink(value);
-			var link = value.replace("http://", "http://framer.link/").replace("https://", "http://framer.link/");
+			
+			var link = value;
+
+
+
+			link = link.replace("http://", "http://framer.link/");
+			link = link.replace("https://", "http://framer.link/");
+
 			$("input").val(link).select();
 			$(this).hide();
 		}
