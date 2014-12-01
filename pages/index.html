@@ -3,13 +3,15 @@
   
 <section id="wrapper">
 	<section>
+		
+
 		<h1>
 			<img src="/static/images/icon-framer.png" srcset="/static/images/icon-framer@2x.png 2x"> 
 			Framer.link
 		</h1>
 
 		<div class="form">
-			<input id="input" type="text" placeholder="Paste link to a zipped .framer file here" required />
+			<input id="input" type="text" placeholder="Paste a link to a zipped .framer project" required />
 			<button type="submit">Generate</button>
 			<a class="btn-close"><img src="/static/images/icon-close.png" srcset="/static/images/icon-close@2x.png 2x"></a>
 
@@ -20,5 +22,16 @@
 		<p>Paste a link of a zipped framer file to generate a link that can be opened directly within <a href="http://framerjs.com">Framer Studio</a>.</p> 
 	</section>
 </section>
+
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-37076997-6', 'auto');
+	ga('send', 'pageview');
+</script>
 
 {% endblock content%}

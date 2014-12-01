@@ -40,7 +40,7 @@ function checkLink(url) {
 	return url;
 };
 
-function isValid(url) {
+function isValidUrl(url) {
 	var pattern = new RegExp('^(https?:\\/\\/)?'+ // Protocol
 	'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // Domain name
 	'((\\d{1,3}\\.){3}\\d{1,3}))'+ // IPv4 Address
@@ -49,7 +49,6 @@ function isValid(url) {
 	'(\\#[-a-z\\d_]*)?$','i'); // Fragment Locator
 
 	if (!pattern.test(url)) {
-		$(".submit-error").html("Not a valid URL").addClass("show");
 		return false;
 	} else {
 		return true;
@@ -64,6 +63,10 @@ function isZip(url) {
 	} else {
 		return true;
 	}
+};
+
+function isGist(url) {
+	return url.indexOf("gist.github.com/") != -1;
 };
 
 $(document).ready(function() {
@@ -82,14 +85,20 @@ $(document).ready(function() {
     });
 
 	$("button").click(function() {
+		
 		var value = $("input").val();
 
-		if (isValid(value) && isZip(value)) {
+		if (!isValidUrl(value)) {
+			$(".submit-error").html("Not a valid URL").addClass("show");
+			return;
+		}
+
+		if (isZip(value) || isGist(value)) {
 			$(".submit-error").removeClass("show");
 			$(".success-message").html("CMD+C To Copy").addClass("show");
 
 			value = checkLink(value);
-			var link = value.replace("http://", "http://framer.link/").replace("https://", "https://framer.link/");
+			var link = value.replace("http://", "http://framer.link/").replace("https://", "http://framer.link/");
 			$("input").val(link).select();
 			$(this).hide();
 		}

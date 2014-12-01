@@ -89,17 +89,18 @@ input {
 }
 input {
 	border: none;
-	width: 500px;
+	width: 400px;
 	height: 48px;
 	border-radius: 3px;
 	box-sizing: border-box;
 	padding-left: 16px;
-	padding-right: 16px;
+	padding-right: 40px;
 	padding-top: 8px;
 	font:14px/1.5 "Fakt", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	display: inline-block;
 	color: #616367;
 	position: relative;
+	left: -50px;
 	z-index: 50;
 }
 ::-webkit-input-placeholder {
@@ -111,7 +112,7 @@ input::selection {
 }
 button {
 	background: #28AFFA;
-	background: #69C7FC;
+	/*background: #69C7FC;*/
 	font: 600 12px/1 "Fakt", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #fff;
 	text-transform: uppercase;
@@ -132,16 +133,18 @@ button {
 button.active {
 	background: #28AFFA;
 }
-button.active:hover {
+button.active:hover,
+button:hover {
 	background: #3EB7FB;
 }
-button.active:active {
+button.active:active,
+button:active {
 	background: #28AFFA;
 }
 .btn-close {
 	position: absolute;
 	top: 13px;
-	right: 10px;
+	right: 12px;
 	cursor: pointer;
 	z-index: 60;
 	opacity: 0.5;
@@ -154,7 +157,6 @@ button.active:active {
 .btn-close:hover {
 	opacity: 1;
 }
-
 .submit-error,
 .success-message {
 	position: relative;
