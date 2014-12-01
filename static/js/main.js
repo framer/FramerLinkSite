@@ -99,20 +99,17 @@ $(document).ready(function() {
 		}
 
 		if (isZip(value) || isGist(value)) {
-			
 			$(".submit-error").removeClass("show");
 			$(".success-message").html("CMD+C To Copy").addClass("show");
 
 			value = checkLink(value);
-			
 			var link = value;
-
-
 
 			link = link.replace("http://", "http://framer.link/");
 			link = link.replace("https://", "http://framer.link/");
 
 			$("input").val(link).select();
+			$("input").addClass("full-width");
 			$(this).hide();
 		}
 	});
@@ -122,6 +119,7 @@ $(document).ready(function() {
 		$("button").show();
 		$("button").removeClass("active");
 		$(".success-message").removeClass("show");
+		$("input").removeClass("full-width");
 	});
 
 });

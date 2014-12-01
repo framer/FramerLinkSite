@@ -103,6 +103,10 @@ input {
 	left: -50px;
 	z-index: 50;
 }
+input.full-width {
+	width:500px;
+	left:0;
+}
 ::-webkit-input-placeholder {
    padding-top: 0px;
 }
