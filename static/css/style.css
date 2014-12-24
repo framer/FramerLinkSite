@@ -107,6 +107,7 @@ input {
 	position: relative;
 	left: -50px;
 	z-index: 50;
+	text-overflow: ellipsis;
 }
 input.full-width {
 	width:350px;
