@@ -1,59 +1,32 @@
 /* Reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0} 
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-@font-face {
-	font-family: 'Fakt';
-	src: url('/static/fonts/FaktPro-Thin.eot');
-	src: url('/static/fonts/FaktPro-Thin.eot?#iefix') format('embedded-opentype'),
-	     url('/static/fonts/FaktPro-Thin.woff') format('woff'),
-	     url('/static/fonts/FaktPro-Thin.ttf') format('truetype');
-	font-style: normal;
-	font-weight: 100;
-}
-
-@font-face {
-	font-family: 'Fakt';
-	src: url('/static/fonts/FaktPro-Blond.eot');
-	src: url('/static/fonts/FaktPro-Blond.eot?#iefix') format('embedded-opentype'),
-	     url('/static/fonts/FaktPro-Blond.woff') format('woff'),
-	     url('/static/fonts/FaktPro-Blond.ttf') format('truetype');
-	font-style: normal;
-	font-weight: 300;
-}
-
-@font-face {
-	font-family: 'Fakt';
-	src: url('/static/fonts/FaktPro-SemiBold.eot');
-	src: url('/static/fonts/FaktPro-SemiBold.eot?#iefix') format('embedded-opentype'),
-	     url('/static/fonts/FaktPro-SemiBold.woff') format('woff'),
-	     url('/static/fonts/FaktPro-SemiBold.ttf') format('truetype');
-	font-style: normal;
-	font-weight: 600;
-}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 
 html, body, #wrapper {
 	height: 100%;
 }
 
 body {
-	font:16px/1 "Fakt", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font:18px/1 "Roboto","Fakt", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	height: 100%;
 	color: #777;
+	font-weight: 300;
 	text-align: center;
 }
 
 h1 {
 	font-size: 28px;
 	letter-spacing: -0.25px;
-	margin-bottom: 0px;
+	margin-bottom: 5px;
 	color: #000;
 }
-#wrapper section img, 
+#wrapper section img,
 p {
-	margin-bottom: 24px;
+	margin-bottom: 34px;
 }
 
 p {
@@ -72,31 +45,27 @@ a {
 #wrapper {
 	margin: 0 auto;
 	max-width: 360px;
-	padding: 160px 40px;
-	position: relative;
+	display: table;
 }
 #wrapper section {
-	position: absolute;
+	display: table-cell;
+	vertical-align: middle;
 	height: 150px; left:0;
 	width:100%;
-	top: 50%;
-	margin-top: -75px;
 	box-sizing: border-box;
 }
 
 .btn {
-	padding:11px 16px 8px 16px;
-	position: relative; 
+	padding: 11px 18px 10px 18px;
+	position: relative;
 	color: #fff;
 	background: #28AFFA;
-	font-size: 12px; 
+	font-size: 12px;
 	text-transform: uppercase;
-	font-weight: 700;
-	text-shadow: 0 1px 1px rgba(0,0,0,0.1);
-	border-radius: 3px; 
-	letter-spacing: 0.5px;
+	font-weight: 600;
+	border-radius: 3px;
+	letter-spacing: 2px;
 	display:inline-block;
-	line-height: 1;
 	cursor: pointer;
 }
 .btn:hover {
@@ -106,7 +75,7 @@ a {
 /* Framer link */
 .framer-link {
 	position: absolute;
-	top: 14px; 
+	top: 14px;
 	left: 8px;
 }
 .framer-link a {
@@ -117,7 +86,7 @@ a {
 	font-weight: 600;
 	position: relative;
 	z-index: 100;
-	padding:10px 12px 6px 12px;
+	padding: 9px 12px;
 	background: rgba(0,0,0,0.25);
 	border-radius: 3px;
 	color: #fff;
